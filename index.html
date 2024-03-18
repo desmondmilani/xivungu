@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Xivungu</title>
+</head>
+<body>
+    
+    <div class="page loading" id="loading">
+        <div class="loading-box"></div>
+    </div>
+    <div class="page welcome" id="welcome">
+        <div class="div">
+            <img class="logo" src="./images/logor.png" alt="">
+            <div class="button-group">
+                <input onclick="goToSelect();" type="button" value="Play Game" />
+                <input onclick="switchPages('gamePlay')" type="button" value="Game Play" />
+            </div>
+            <p class="team">Developer: Desmond "N'wana Mthavini" Milani</p>
+            <p class="team">Graphic Designer: Lesego Matsoane</p>
+            <p class="team">Sound Engineer: Ntivo Manganyi (3ple-Bars Studios)</p>
+        </div>
+    </div>
+    <div class="page select" id="select">
+        <div class="div">
+            <div class="player-details">
+                <h3 class="paragraph">Username:</h3>
+                <input id="username" class="username" type="text">
+                <input onclick="changeUserName()" class="change" type="button" value="Change">
+            </div>
+            <div class="playerResults">
+                <p id="lblUserResults">The player results will appear here</p>
+            </div>
+            <h1 class="heading">Select your opponent</h1>
+            <div class="select-player">
+                <div onclick="selectOpponent('Paris Makhadi')" class="player">
+                    <img src="./images/cards/child.jpg" alt="" />
+                    <h3>Paris Makhadi</h3>
+                </div>
+                <div onclick="selectOpponent('Gavin Makhadi')"  class="player">
+                    <img src="./images/cards/father.jpg" alt="" />
+                    <h3>Gavin Makhadi</h3>
+                </div>
+                <div onclick="selectOpponent('Marriam Makhadi')"  class="player">
+                    <img src="./images/cards/mother.jpg" alt="" />
+                    <h3>Marriam Makhadi</h3>
+                </div>
+            </div>
+            <p id = "lblOpponent">Opponent description</p>
+            <input onclick="goToMatch()" class="btnChallenge" type="button" value="Challenge">
+        </div>
+    </div>
+    <div class="page match" id="match">
+        <div class="table">
+            <div id="player1Deck" class="player-hand"> <img class="card" src="./images/cardFront.png" alt=""></div>
+            <div class="table-deck">
+                <div id="closedDeck" class="deck closed-deck"><img class="card" src="./images/cardFront.png" alt=""></div>
+                <div id="openDeck" class="deck open-deck"><img class="card" src="./images/cardFront.png" alt=""></div>
+                <div class="deck match-info">
+                    <h2>Match Info</h2>
+                    <div class="info-item">
+                        <h4 id="lblCurrentPlayer" class="value">Player 2</h4>
+                    </div>
+
+                    <div class="info-item">
+                        <h4 style="color: orange" class="label">Full Deck:</h4>
+                        <h4 style="color: orange" id="lblClosedDeck" class="value">52</h4>
+                    </div>
+
+                    <div class="info-item">
+                        <h4 style="color: orange" class="label">Table:</h4>
+                        <h4 style="color: orange" id="lblOpenDeck" class="value">0</h4>
+                    </div>
+
+                    <div class="info-item">
+                        <h4 id="lblP1" class="label">Player1:</h4>
+                        <h4 id="lblPlayer1" class="value">0</h4>
+                    </div>
+
+                    <div class="info-item">
+                        <h4 id="lblP2" class="label">Player 2: </h4>
+                        <h4 id="lblPlayer2" class="value">0</h4>
+                    </div>
+
+                    <div class="info-item">
+                        <h4 style="color: yellow" id="lblTimer" class="label">0 </h4>
+                    </div>
+
+
+                    <div class="info-item volume">
+                        <h4>Volume</h4>
+                    </div>
+
+                    <div class="info-item volume">
+                        <input onchange="changeVolume(this.value)" type="range" name="" id="volume" min="0" max="1" step="0.1" value="0.2" >
+                    </div>
+
+                </div>
+            </div>
+            <div id="player2Deck" class="player-hand"><img class="card" src="./images/cardFront.png" alt=""></div>
+        </div>
+    </div>
+    <div class="page results" id="results">
+        <img id="resultsImg" src="" alt="">
+        <h3 id="lblWinner">The winner is Player 2 congradulations to you!</h3>
+        <input onclick="playAgain()" type="button" value="Play Again" />
+        <input onclick="chooseAnotherOpponent()" type="button" value="Choose another opponent" />
+    </div>
+
+    <div class="page gameplay" id="gamePlay">
+        <div class="div">
+            <h1>Game Play</h1>
+            <input onclick="switchPages('welcome')" type="button" value="Go Back" />
+            <p>The point of this game is to lose all the cards</p>
+            <br />
+            <img src="./images/logow.png" class="logo" alt="" />
+            <p>The game begins with a shuffled deck placed face down, known as the closed deck. Players take turns drawing a card from the closed deck and placing it face up on the open deck. The twist lies in matching shapes rather than numbers or suits. If the drawn card's shape corresponds to the top card on the open deck, the player claims all cards in the open deck.</p>
+            <p>As the closed deck dwindles, players seamlessly transition to playing cards from their hands, further complicating the game dynamics. The ultimate goal is to be the first to play all their cards, earning the coveted title of Xivungu champion.</p>
+            <p>Embark on the Xivungu journey, where the quest to lose all cards becomes a thrilling adventure in strategy, luck, and the pursuit of victory.</p>
+            
+            
+            <input onclick="goToSelect();" type="button" value="Play Game" />
+            
+        
+        </div>
+        
+    </div>
+
+    <div class="page team" id="team">
+        <h1>Team Page</h1>
+    </div>
+
+    <div class="page pre-match" id="preMatch">
+        <h1>Pre Match Page</h1>
+    </div>
+
+    <div id="modal" class="modal" style="display: none;">
+        <h1 id="lblModal">Player 1's turn</h1>
+    </div>
+
+    <div class="pictures" style="display: none;">
+        <img src="./images/cards/1c.png" alt="">
+        <img src="./images/cards/2c.png" alt="">
+        <img src="./images/cards/3c.png" alt="">
+        <img src="./images/cards/4c.png" alt="">
+        <img src="./images/cards/5c.png" alt="">
+        <img src="./images/cards/6c.png" alt="">
+        <img src="./images/cards/7c.png" alt="">
+        <img src="./images/cards/8c.png" alt="">
+        <img src="./images/cards/9c.png" alt="">
+        <img src="./images/cards/10c.png" alt="">
+        <img src="./images/cards/jc.png" alt="">
+        <img src="./images/cards/qc.png" alt="">
+        <img src="./images/cards/kc.png" alt="">
+
+        <img src="./images/cards/1h.png" alt="">
+        <img src="./images/cards/2h.png" alt="">
+        <img src="./images/cards/3h.png" alt="">
+        <img src="./images/cards/4h.png" alt="">
+        <img src="./images/cards/5h.png" alt="">
+        <img src="./images/cards/6h.png" alt="">
+        <img src="./images/cards/7h.png" alt="">
+        <img src="./images/cards/8h.png" alt="">
+        <img src="./images/cards/9h.png" alt="">
+        <img src="./images/cards/10h.png" alt="">
+        <img src="./images/cards/jh.png" alt="">
+        <img src="./images/cards/qh.png" alt="">
+        <img src="./images/cards/kh.png" alt="">
+
+        <img src="./images/cards/1s.png" alt="">
+        <img src="./images/cards/2s.png" alt="">
+        <img src="./images/cards/3s.png" alt="">
+        <img src="./images/cards/4s.png" alt="">
+        <img src="./images/cards/5s.png" alt="">
+        <img src="./images/cards/6s.png" alt="">
+        <img src="./images/cards/7s.png" alt="">
+        <img src="./images/cards/8s.png" alt="">
+        <img src="./images/cards/9s.png" alt="">
+        <img src="./images/cards/10s.png" alt="">
+        <img src="./images/cards/js.png" alt="">
+        <img src="./images/cards/qs.png" alt="">
+        <img src="./images/cards/ks.png" alt="">
+
+        <img src="./images/cards/1d.png" alt="">
+        <img src="./images/cards/2d.png" alt="">
+        <img src="./images/cards/3d.png" alt="">
+        <img src="./images/cards/4d.png" alt="">
+        <img src="./images/cards/5d.png" alt="">
+        <img src="./images/cards/6d.png" alt="">
+        <img src="./images/cards/7d.png" alt="">
+        <img src="./images/cards/8d.png" alt="">
+        <img src="./images/cards/9d.png" alt="">
+        <img src="./images/cards/10d.png" alt="">
+        <img src="./images/cards/jd.png" alt="">
+        <img src="./images/cards/qd.png" alt="">
+        <img src="./images/cards/kd.png" alt="">
+
+        <img src="./images/cards/cardbg.png" alt="">
+        <img src="./images/cards/mother.jpg" alt="">
+        <img src="./images/cards/father.jpg" alt="">
+        <img src="./images/cards/child.jpg" alt="">
+
+        <img src="./images/cards/win.jpg" alt="">
+        <img src="./images/cards/lose.png" alt="">
+
+        <audio id="music" loop src="./show.mp3" preload="auto" controls="none"></audio>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

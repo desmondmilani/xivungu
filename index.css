@@ -1,0 +1,385 @@
+
+
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+input:hover {
+    background-color: rgba(100, 120, 200, 0.7);
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.page {
+    display: flex;
+    width: 98%;
+    height: 100vh;
+}
+
+.loading {
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-box {
+    width: 200px;
+    height: 200px;
+    border-left: 8px dotted #999;
+    border-top: 12px dotted #44f;
+    border-right: 8px dotted #999;
+    border-bottom: 8px dotted #999;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    animation: load 0.4s infinite;
+    transition: all 2s ease-in-out;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border-top: 16px dotted #44f;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-top: 12px dotted #44f;
+    }
+    
+}
+
+.welcome {
+    background: url("./images/bg1.jpg");
+    background-size: cover;
+    perspective: 800px;
+}
+
+.welcome .div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotateX(5deg);
+    
+}
+
+
+.logo {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 8px solid black;
+    border-radius: 80px;
+}
+
+
+
+.heading {
+    font-size: 2em;
+    text-align: center;
+    font-family: tahoma;
+}
+
+.sub-heading {
+    font-size: 1.5em;
+    text-align: center;
+    font-family: tahoma;
+}
+
+.paragraph {
+    font-size: 1.2em;
+    text-align: center;
+    font-family: tahoma;
+}
+
+.button-group {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.button-group:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.button-group input{
+    padding: 10px 20px 10px 20px;
+}
+
+.button-group input:hover{
+    cursor: pointer;
+}
+
+.select {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    background: url("./images/bg2.jpg");
+    background-size: cover;
+}
+
+.select .div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+.player-details {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.username {
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.change {
+    padding: 5px 10px 5px 10px;
+}
+
+.select-player {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+}
+
+.player:hover {
+    border: 2px dotted black;
+    cursor: pointer;
+    background-color: #222;
+}
+
+.player img {
+    width: 80px;
+    height: 80px;
+}
+
+.player h3 {
+    text-align: center;
+    font-family: tahoma;
+    font-size: 0.7em;
+}
+
+.btnChallenge {
+    padding: 10px;
+    font-family: tahoma;
+    font-size: 1.6em;
+    margin-top: 10px;
+}
+
+.btnChallenge:hover {
+    cursor: pointer;
+}
+
+.match {
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.player-hand {
+    display: flex;
+    width: 100%;
+    height: 33%;
+    align-items: center;
+    overflow-x: scroll;
+}
+.table-deck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 33%;
+    background-image: url(./images/cards/table.jpg);
+    background-size: cover;
+}
+.deck {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.closed-deck {
+    display: flex;
+}
+.open-deck {
+    display: flex;
+}
+
+.match-info {
+    flex-direction: column;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.info-item {
+    display: flex;
+}
+
+.card {
+    width: 90px;
+    height: 180px;
+    border: 8px solid #bcd;
+    border-radius: 10px;
+    transition: border 0.6s ease-in-out;
+    margin-right: 5px;
+}
+
+.card:hover {
+    border: 4px solid #bcd;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal h1 {
+    color: antiquewhite;
+    font-size: 3em;
+}
+
+.results {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.results img {
+    width: 100px;
+    height: 100px;
+}
+
+.results h3 {
+    color: antiquewhite;
+    width: 80%;
+    font-family: tahoma;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.results input {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.results input:hover {
+    cursor: pointer;
+}
+
+.team {
+    color: black;
+    font-family: tahoma;
+    font-size: 0.6em;
+    font-weight: bolder;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+.gameplay {
+    align-items: center;
+    justify-content: center;
+    background: url("./images/bg2.jpg");
+    background-size: cover;
+}
+
+.gameplay .div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gameplay .div h1 {
+    color: aliceblue;
+    font-family: tahoma;
+    font-size: 2em;
+}
+
+.gameplay .div input {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.gameplay .div p {
+    color: #ccc;
+    font-family: tahoma;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.volume {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.volume input {
+    margin-left: 5px;
+}
